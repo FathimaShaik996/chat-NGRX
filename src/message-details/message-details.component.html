@@ -1,0 +1,12 @@
+<div>ID: {{ id }}</div>
+<div *ngFor="let details of messages">
+  <div>Message : {{ details.content }}</div>
+  <div *ngFor="let message of details.messageList">
+    <div *ngIf="message">Message:{{ message }}</div>
+  </div>
+</div>
+
+<form [formGroup]="messagesForm">
+  <input type="text" formControlName="message" />
+  <button (click)="sendMessage()">Send</button>
+</form>
